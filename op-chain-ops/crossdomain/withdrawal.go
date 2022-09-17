@@ -31,6 +31,23 @@ func init() {
 	}
 }
 
+// NewWithdrawal will create a Withdrawal
+func NewWithdrawal(
+	nonce *big.Int,
+	sender, target *common.Address,
+	value, gasLimit *big.Int,
+	data []byte,
+) *Withdrawal {
+	return &Withdrawal{
+		Nonce:    nonce,
+		Sender:   sender,
+		Target:   target,
+		Value:    value,
+		GasLimit: gasLimit,
+		Data:     data,
+	}
+}
+
 // Withdrawal represents a withdrawal transaction on L2
 type Withdrawal struct {
 	Nonce    *big.Int
